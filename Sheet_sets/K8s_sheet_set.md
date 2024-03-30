@@ -58,3 +58,9 @@
 | Command | Description |
 | - | - |
 | `kubectl set image deployment/<deployment-name> <container-name>=<new-image>` | Updates the image of a container in a deployment. |
+
+# Kubernetes Logs
+
+> | ![k8s-logs.jpeg](.\img\k8s-logs.jpeg) |
+> | :-: |
+> | _K8s Logs_ |
