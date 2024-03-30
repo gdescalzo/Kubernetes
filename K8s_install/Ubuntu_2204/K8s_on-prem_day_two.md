@@ -115,7 +115,7 @@ metadata:
     nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
 spec:
   rules:
-  - host: lolpro11.me
+  - host: master
     http:
       paths:
       - path: /
