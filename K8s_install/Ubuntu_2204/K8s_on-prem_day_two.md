@@ -47,6 +47,11 @@ $ kubeadm token create --print-join-command
 
 ## Install Kubernetes Dashboard
 
+> | ![k8s-ingress-arch.png](.\img\k8s-ingress-arch.png) |
+> | :-: |
+> | _Top nodes example_ |
+
+
 > Execute on the Master node:
 
 ```
@@ -95,7 +100,7 @@ EOF
 
 ### Create the ingress controller
 
-> ```
+```
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -107,14 +112,13 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/auth-secret: basic-auth
-    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - lolpro11'
 spec:
   rules:
-
-- host: lolpro11.me
+  - host: lolpro11.me
     http:
       paths:
-  - path: /
+      - path: /
         pathType: Prefix
         backend:
           service:
@@ -122,4 +126,4 @@ spec:
             port:
               number: 80
 EOF
-> ```
+```
