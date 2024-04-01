@@ -41,13 +41,13 @@ $ kubeadm token create --print-join-command
 > Add in arg: - --kubelet-insecure-tls
 > ```
 
-> | ![k8s-top.png](.\img\k8s-top.png) |
+> | ![k8s-top.png](https://github.com/gdescalzo/Kubernetes/blob/main/K8s_install/Ubuntu_2204/img/k8s-top.png) |
 > | :-: |
 > | _Top nodes example_ |
 
 ## Install Kubernetes Dashboard
 
-> | ![k8s-ingress-arch.png](.\img\k8s-ingress-arch.png) |
+> | ![k8s-ingress-arch.png](https://github.com/gdescalzo/Kubernetes/blob/main/K8s_install/Ubuntu_2204/img/k8s-ingress-arch.png) |
 > | :-: |
 > | _Top nodes example_ |
 
