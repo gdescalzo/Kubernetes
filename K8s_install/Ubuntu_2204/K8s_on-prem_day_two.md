@@ -23,7 +23,7 @@ $ kubeadm token create --print-join-command
 > kubectl label node {here your worker host name} node-role.kubernetes.io/worker=worker
 > ```
 
-> | ![k8s-tag.png](.\img\k8s-tag.png) |
+> | ![k8s-tag.png](https://github.com/gdescalzo/Kubernetes/blob/main/K8s_install/Ubuntu_2204/img/k8s-tag.png) |
 > | :-: |
 > | _Tagged nodes example_ |
 
