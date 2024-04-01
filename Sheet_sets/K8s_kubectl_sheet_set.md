@@ -1,5 +1,12 @@
 # Kubernetes Command Cheat Sheet
 
+## Retriving the used services (svc)
+
+| Command | Description |
+| - | - |
+| `kubectl get svc` | List all services in the cluster |
+| `kubectl get svc` | List all services in the cluster |
+
 ## Retrieving Resources
 
 | Command | Description |
@@ -58,9 +65,3 @@
 | Command | Description |
 | - | - |
 | `kubectl set image deployment/<deployment-name> <container-name>=<new-image>` | Updates the image of a container in a deployment. |
-
-# Kubernetes Logs
-
-> | ![k8s-logs.jpeg](.\img\k8s-logs.jpeg) |
-> | :-: |
-> | _K8s Logs_ |

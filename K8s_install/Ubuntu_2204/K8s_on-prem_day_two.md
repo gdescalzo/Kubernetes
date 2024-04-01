@@ -83,7 +83,22 @@ subjects:
 EOF
 ```
 
+### Getting a Bearer Token for ServiceAccount
+
+
 ### Get a Bearer Token
+
+```
+kubectl -n kubernetes-dashboard create token admin-user
+```
+
+It should print something like:
+
+```
+gdescalzo@master:~$ kubectl -n kubernetes-dashboard create token admin-user
+eyJhbGciOiJSUzI1NiIsImtpZCI6ImZSRkljSlAtWmpON2NRTHF1TVhUTWdlcXhTLWJJMGJXNGJEOEt0cXFVTVEifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzExODIwNTQ1LCJpYXQiOjE3MTE4MTY5NDUsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiMmFjM2I3ZWItMWQyMy00YzgzLTliYmQtZmMyMmNlNjgwODUyIn19LCJuYmYiOjE3MTE4MTY5NDUsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.i91XF5Sbv5almOo_Yn6iWaI0qn2xm7WLR3vLUlHtrZoJ3L7sqZP5Bn6MzDaEdIUJR6ZT7zKfoKcyj4w9Dn7Moeor2-gdrKTn8pgSIWVwL-ILqhUEVp-IobMRicMNjJhgazgCDNM3fl6IphrkDDZYHPk9AUhwrT38behOrghpXVcNJTdP25Ign2LF5AF-ALUJBO05G1tfNcjIHaJu-V4eAfPKn1wk3zJy1qQN1QeCVZxKYF9vo4SEtBgegphi_yUUn659qtcRFZCe2YvYPLmkV78V2VSfFVfkw6C7OFX3XzI4lsUMym_MAoTaa5xF0bfDi9XMQoNifhx7ReauNzZ8VA
+
+```
 
 > Now we need to find token we can use to log in. Execute following command:
 
