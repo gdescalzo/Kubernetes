@@ -9,12 +9,17 @@
 
 ```
 sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+```
+or
+
+```
 vi /etc/fstab # and comment the SWAP line
 ```
 
 ## Enable Netfilter for ContainerD
 
-> Doit on the Masters and Workers
+> Do it on the Masters and Workers
 
 ```
 sudo printf "overlay\nbr_netfilter\n" >> /etc/modules-load.d/containerd.conf
@@ -99,6 +104,14 @@ sudo systemctl restart containerd
 > sudo systemctl status kubelet.service
 > sudo systemctl restart kubelet.service
 > ```
+
+# Initialize Kubernetes Cluster
+
+> The initialization of a Kubernetes cluster on Ubuntu 22.04 involves running the below command to initialize the Kubernetes cluster on our control plane node. This installs things like the kube-controller-manager, API, etcd storage, and other services.
+
+```
+sudo kubeadm init
+```
 
 > For K8s wokrs needs the configuration to start (do it on Master only)
 > ```
