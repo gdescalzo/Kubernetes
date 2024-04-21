@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: postgres-deployment
+  labels:
+    app: postgres
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      volumes:
+      - name: postgres-storage
+        persistentVolumeClaim:
+          claimName: postgres-pvc
+
+      containers:
+      - name: postgres
+        image: postgres:latest
+        ports:
+          - containerPort: 5432
+
+        volumeMounts:
+        - name: postgres-storage
+          mountPath: /var/lib/postgresql/data
+          subPath: postgres
+          readOnly: false
+
+        env:
+        - name: POSTGRES_PASSWORD
+          value: "you_password_here" 
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata

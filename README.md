@@ -6,7 +6,7 @@
 
 - `K8s_install/Ubuntu_2204`: Contains detailed instructions and necessary images for installing Kubernetes on-premise on Ubuntu 22.04 systems.
 - `Sheet_sets`: Includes a cheat sheet with common Kubernetes commands to assist you in managing your cluster.
-- `Deployment_manifests`: A new directory containing YAML manifest files for setting up different Kubernetes deployments.
+- `Deployments`: A new directory containing YAML manifest files for setting up different Kubernetes deployments.
 
 ## What's Inside
 
@@ -22,9 +22,9 @@
 
 > The `Sheet_sets` directory contains a handy cheat sheet that I've shared previously. It's a quick reference guide to the most commonly used Kubernetes commands, saving you time and making cluster management more efficient.
 
-### Deployment Manifests
+### Deployments
 
-> The newly added `Deployment_manifests` directory is where you'll find YAML files for deploying various applications and services within your Kubernetes cluster. These are ready-to-use templates that can be customized to fit your specific needs.
+> The newly added `Deployments` directory is where you'll find YAML files for deploying various applications and services within your Kubernetes cluster. These are ready-to-use templates that can be customized to fit your specific needs.
 
 ## How to Use This Repository
 
