@@ -1,34 +1,44 @@
 apiVersion: apps/v1
-
 kind: Deployment
-
 metadata:
   labels:
     app: nginx
   name: nginx-deployment
-
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: nginx
-  
   template:
     metadata:
       labels:
         app: nginx
-
     spec:
       volumes:
       - name: nginx-html
         persistentVolumeClaim:
           claimName: nginx-pvc
-
+      - name: nginx-logs
+        emptyDir: {}
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+      - name: nginx-index
+        configMap:
+          name: nginx-config
       containers:
       - name: nginx
         image: nginx:latest
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: nginx-pvc
+        - name: nginx-html
           mountPath: /usr/share/nginx/html
+        - name: nginx-logs
+          mountPath: /var/log/nginx
+        - name: nginx-config
+          mountPath: /etc/nginx/nginx.conf
+          subPath: nginx.conf
+        - name: nginx-index
+          mountPath: /usr/share/nginx/html/index.html
+          subPath: index.html
