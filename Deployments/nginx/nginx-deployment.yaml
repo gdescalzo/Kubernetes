@@ -3,23 +3,24 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
-  name: nginx-deployment
   labels:
     app: nginx
+  name: nginx-deployment
 
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: nginx
-
+  
   template:
     metadata:
       labels:
         app: nginx
+
     spec:
       volumes:
-      - name: nginx-storage
+      - name: nginx-html
         persistentVolumeClaim:
           claimName: nginx-pvc
 
@@ -27,14 +28,7 @@ spec:
       - name: nginx
         image: nginx:latest
         ports:
-          - containerPort: 80
-
+        - containerPort: 80
         volumeMounts:
-        - name: postgres-storage
-          mountPath: /usr/share/nginx
-          readOnly: false
-
-        volumes:
-          - name: nginx-pvc
-            persistentVolumeClaim:
-              claimNanme: nginx-pvc
+        - name: nginx-pvc
+          mountPath: /usr/share/nginx/html
