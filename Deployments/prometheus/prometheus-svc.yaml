@@ -3,11 +3,15 @@ kind: Service
 metadata:
   name: prometheus-service
   namespace: monitoring
+  annotations:  
+      prometheus.io/scrape: 'true'     
+      prometheus.io/port:   '9090'
 spec:
   selector:
-    app: prometheus
+    app: prometheus-server
   ports:
     - protocol: TCP
       port: 9090
       targetPort: 9090
+      nodePort: 30000
   type: LoadBalancer
