@@ -5,7 +5,7 @@ metadata:
     app: nginx
   name: nginx-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: nginx
@@ -23,9 +23,9 @@ spec:
       - name: nginx-config
         configMap:
           name: nginx-config
-      - name: nginx-index
+      - name: php-fpm-config
         configMap:
-          name: nginx-config
+          name: php-fpm-config
       containers:
       - name: nginx
         image: nginx:latest
@@ -39,6 +39,11 @@ spec:
         - name: nginx-config
           mountPath: /etc/nginx/nginx.conf
           subPath: nginx.conf
-        - name: nginx-index
-          mountPath: /usr/share/nginx/html/index.html
-          subPath: index.html
+      - name: php-fpm
+        image: php:7.4-fpm
+        volumeMounts:
+        - name: nginx-html
+          mountPath: /usr/share/nginx/html
+        - name: php-fpm-config
+          mountPath: /usr/local/etc/php-fpm.d/www.conf
+          subPath: www.conf
