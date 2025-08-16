@@ -2,4 +2,4 @@
 
 > | ![k8s-logs.jpeg](.\img\k8s-logs.jpeg) |
 > | :-: |
-> | _K8s Logs_ |
+> | _K8s Logs_ |  
